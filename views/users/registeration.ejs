@@ -1,0 +1,115 @@
+<%- include('../layouts/header.ejs') %>
+
+<link rel="stylesheet" href="/public/js/validation.js">
+
+
+<section class="vh-100" style="background-color: #2b8388c2;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-8">
+
+        <h1 class="text-white mb-4">Registration Form</h1>
+
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body">
+
+            <form action="" method="post" id="myForm">
+
+              <div class="d-flex justify-content-center">
+                <%=(typeof message1!=='undefined')?message1:"us"%>
+              </div>
+              
+              <div class="row align-items-center py-2">
+                <div class="col-md-3 ps-4">
+                  <h6 class="mb-0">Full name</h6>
+                </div>
+                <div class="col-md-9">
+                  <input name="name" placeholder="Enter name" aria-label="name" class="form-control" required/>
+                  <label style="display: none;" id="errorName"> <u style="color: red;"><p>the Name must be atleast 4 characters</p></u></label>
+                </div>
+              </div>
+
+              <hr class="mx-n3">
+
+              <div class="row align-items-center py-2">
+                <div class="col-md-3 ps-4">
+                  <h6 class="mb-0">Email address</h6>
+                </div>
+                <div class="col-md-9">
+                  <input type="email" name="email" placeholder="Enter Email" aria-label="email" class="form-control" required/>
+                  <label style="display: none;" id="errorName"> <u style="color: red;"><p>Email must be valid</p></u></label>
+                  
+                </div>
+              </div>
+
+              <hr class="mx-n3">
+
+              <div class="row align-items-center py-2">
+                <div class="col-md-3 ps-4">
+                  <h6 class="mb-0">Mobile</h6>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" name="mno" placeholder="Enter Mobile" aria-label="mobile" class="form-control" required/>
+                  <label style="display: none;" id="errorMno"> <u style="color: red;"><p>mobile numer must be valid</p></u></label>
+                </div>
+              </div>
+
+              <hr class="mx-n3">
+
+              <div class="row align-items-center py-2">
+                <div class="col-md-3 ps-4">
+                  <h6 class="mb-0">Password</h6>
+                </div>
+                <div class="col-md-9">
+                  <input type="password" name="password" placeholder="Enter Password" aria-label="password" class="form-control" required/>
+                  <label style="display: none;" id="errorPasword"> <u style="color: red;"><p>password must be atleast 4 characters</p></u></label>
+                 
+                </div>
+              </div>
+
+              <hr class="mx-n3">
+
+              <div class="px-4 py-3 text-center">
+                <input  type="submit" value="Register" aria-label="register" class="btn btn-primary btn-lg">
+                
+                <a href="/" type="submit"  value="Login" name="" id="submitBtn"  aria-label="Login"
+                style="padding-left: 1.5rem; padding-right: 3.5rem; text-align: center;" class="btn btn-primary btn-lg">back to login</a>
+              </div>
+            
+
+              
+
+              <div class="d-flex justify-content-center">
+                <!-- <%=(typeof message!=='undefined')?message:""%> -->
+                <%
+
+ if(typeof message!== "undefined"){
+  %>
+<p style="color: green;"><%= message%></p>
+<%
+ } 
+
+ %>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+ <%
+
+ if(typeof message!== "undefined"){
+  %>
+<p style="color: green;"><%= message%></p>
+<%
+ } 
+
+ %>
+
+<%- include('../layouts/footer.ejs') %>

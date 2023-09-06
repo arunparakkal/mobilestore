@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/public/css/detail.css">
+
+    <!-- Jumbotron -->
+    <div class="p-3 text-center bg-white border-bottom">
+      <div class="container">
+        <div class="row gy-3">
+          <!-- Left elements -->
+          <div class="col-lg-2 col-sm-4 col-4">
+            <a href="https://mdbootstrap.com/" target="_blank" class="float-start">
+              <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="35" />
+            </a>
+          </div>
+          <!-- Left elements -->
+  
+          <!-- Center elements -->
+          <div class="order-lg-last col-lg-5 col-sm-8 col-8">
+            <div class="d-flex float-end">
+              <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"> <i class="fas fa-user-alt m-1 me-md-2"></i><p class="d-none d-md-block mb-0">Sign in</p> </a>
+              <a href="/logout" class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"> <i class="fas fa-heart m-1 me-md-2"></i><p class="d-none d-md-block mb-0">logout</p> </a>
+              <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"> <i class="fas fa-shopping-cart m-1 me-md-2"></i><p class="d-none d-md-block mb-0">My cart</p> </a>
+            </div>
+          </div>
+          <!-- Center elements -->
+  
+          <!-- Right elements -->
+          <div class="col-lg-5 col-md-12 col-12">
+            <div class="input-group float-center">
+              <div class="form-outline">
+                <input type="search" id="form1" class="form-control" placeholder="Search" style="width:16rem;"/>
+                
+              </div>
+              <button type="button" class="btn btn-primary shadow-0" style="height:2.29rem; width: 46px; ">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+          <!-- Right elements -->
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <!-- Container wrapper -->
+      <div class="container justify-content-center justify-content-md-between">
+        <!-- Toggle button -->
+        <button
+                class="navbar-toggler border py-2 text-dark"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarLeftAlignExample"
+                aria-controls="navbarLeftAlignExample"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                >
+          <i class="fas fa-bars"></i>
+        </button>
+  
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
+          <!-- Left links -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-dark" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>category</a>
+                <div class="dropdown-menu border-0">
+                    <a href="#" class="dropdown-item">category</a>
+                    <a href="typography.html" class="dropdown-item">Typography</a>
+                    <a href="element.html" class="dropdown-item">Other Elements</a>
+                </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">Hot offers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">Gift boxes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">Menu item</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">Menu name</a>
+            </li>
+            <!-- Navbar dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                Others
+              </a>
+              <!-- Dropdown menu -->
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="#">Action</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Another action</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <!-- Left links -->
+        </div>
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+<!-- <div class = "card-wrapper"> -->
+    <% products.forEach(product =>{ %>
+    <div class = "card">
+      <!-- card left -->
+    
+      <div class = "product-imgs">
+        <div class = "img-display">
+          <div class = "img-showcase">
+            <% products.forEach(image =>{ %>
+            <img src = "/public/uploadProduct/<%= product.image[0] %>" alt = "shoe image">
+            <!-- <img src = "/public/uploadProduct/<%= product.image[1] %>" alt = "shoe image">
+            <img src = "/public/uploadProduct/<%= product.image[2] %>" alt = "shoe image">
+            <img src = "/public/uploadProduct/<%= product.image[3] %>" alt = "shoe image"> -->
+            <% }) %>
+          </div>
+        </div>
+        <div class = "img-select">
+          <div class = "img-item">
+            <!-- <a href = "#" data-id = "1">
+              <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg" alt = "shoe image">
+            </a> -->
+          </div>
+          <div class = "img-item">
+            <a href = "#" data-id = "2">
+              <img src = "/public/uploadProduct/<%= product.image[1] %>" alt = "shoe image">
+            </a>
+          </div>
+          <div class = "img-item">
+            <a href = "#" data-id = "3">
+              <img src = "/public/uploadProduct/<%= product.image[2] %>" alt = "shoe image">
+            </a>
+          </div>
+          <div class = "img-item">
+            <a href = "#" data-id = "4">
+              <img src = "/public/uploadProduct/<%= product.image[3] %>" alt = "shoe image">
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- card right -->
+    
+      <div class = "product-content">
+        <h2 class = "product-title"><%= product.productname %></h2>
+        <a href = "#" class = "product-link">visit nike store</a>
+        <div class = "product-rating">
+          <i class = "fas fa-star"></i>
+          <i class = "fas fa-star"></i>
+          <i class = "fas fa-star"></i>
+          <i class = "fas fa-star"></i>
+          <i class = "fas fa-star-half-alt"></i>
+          <span>4.7(21)</span>
+        </div>
+  
+        <div class = "product-price">
+          <p class = "last-price">Old Price: <span><%= product.salesprice %></span></p>
+          <p class = "new-price">New Price: <span><%= product.productprice %></span></p>
+        </div>
+  
+        <div class = "product-detail">
+          <h2>about this item: </h2>
+          <p><%= product.description %></p>
+          <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perferendis eius. Dignissimos, labore suscipit. Unde.</p> -->
+          <ul>
+            <li>Color: <span><%= product.color %></span></li>
+            <li>Available: <span><%= product.quantity %></span></li>
+            <li>Category: <span><%= product.categoryname %> </span></li>
+            <li>Shipping Area: <span>All over the world</span></li>
+            <li>Shipping Fee: <span>Free</span></li>
+          </ul>
+        </div>
+        <div class = "purchase-info">
+          <input type = "number" min = "0" value = "1">
+          <button type = "button" class = "btn">
+            Add to Cart <i class = "fas fa-shopping-cart"></i>
+          </button>
+          <button type = "button" class = "btn">Compare</button>
+        </div>
+  
+        <div class = "social-links">
+          <p>Share At: </p>
+          <a href = "#">
+            <i class = "fab fa-facebook-f"></i>
+          </a>
+          <a href = "#">
+            <i class = "fab fa-twitter"></i>
+          </a>
+          <a href = "#">
+            <i class = "fab fa-instagram"></i>
+          </a>
+          <a href = "#">
+            <i class = "fab fa-whatsapp"></i>
+          </a>
+          <a href = "#">
+            <i class = "fab fa-pinterest"></i>
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+    <% }) %>
+  <!-- </div> -->
+  <div class="">
+    <div class="container">
+      <div class="d-flex justify-content-between py-4 border-top">
+        <!--- payment --->
+        <div>
+          <i class="fab fa-lg fa-cc-visa text-dark"></i>
+          <i class="fab fa-lg fa-cc-amex text-dark"></i>
+          <i class="fab fa-lg fa-cc-mastercard text-dark"></i>
+          <i class="fab fa-lg fa-cc-paypal text-dark"></i>
+        </div>
+        <!--- payment --->
+
+        <!--- language selector --->
+        <div class="dropdown dropup">
+          <a class="dropdown-toggle text-dark" href="#" id="Dropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false"> <i class="flag-united-kingdom flag m-0 me-1"></i>English </a>
+
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="Dropdown">
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-united-kingdom flag"></i>English <i class="fa fa-check text-success ms-2"></i></a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-poland flag"></i>Polski</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-china flag"></i>中文</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-japan flag"></i>日本語</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-germany flag"></i>Deutsch</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-france flag"></i>Français</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-spain flag"></i>Español</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-russia flag"></i>Русский</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i>Português</a>
+            </li>
+          </ul>
+        </div>
+        <!--- language selector --->
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/public/js/validation.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
